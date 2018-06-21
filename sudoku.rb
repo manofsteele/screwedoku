@@ -78,5 +78,6 @@ class SudokuGame
   attr_reader :board
 end
 
-
-game = SudokuGame.from_file("puzzles/sudoku1.txt")
+if __FILE__ == $PROGRAM_NAME
+  game = SudokuGame.from_file("puzzles/sudoku1.txt").run
+end
