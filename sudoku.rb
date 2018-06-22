@@ -1,7 +1,7 @@
 require_relative "board"
 require 'colorize'
 
-puts "Only contractors write code this bad.".yellow
+# puts "Only contractors write code this bad.".yellow
 
 class SudokuGame
   def self.from_file(filename)
@@ -65,13 +65,13 @@ class SudokuGame
   end
 
   def solved?
-    self.solved?
+    board.solved?
   end
 
   def valid_pos?(pos)
-    if pos.is_a?(:Array) &&
-      pos.length = 2 &&
-      pos.all? { |x| x.in?(0, board.size - 1) }
+    if pos.is_a?(Array) &&
+      pos.length == 2 &&
+      pos.all? { |x| (0...board.size).include?(x) }
       return true
     else
       get_pos
